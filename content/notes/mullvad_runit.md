@@ -1,7 +1,7 @@
 +++
 title = 'Mullvad runit'
 date = '2025-12-07T19:07:38+01:00'
-draft = true 
+draft = false 
 tags = ['linux']
 +++
 
