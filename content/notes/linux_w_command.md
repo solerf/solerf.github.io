@@ -1,5 +1,5 @@
 +++
-title = 'Linux_w_command'
+title = 'Linux `w` command'
 date = '2025-10-28T22:57:25+01:00'
 draft = false
 tags = ['linux']

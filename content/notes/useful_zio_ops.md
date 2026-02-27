@@ -1,5 +1,5 @@
 +++
-title = 'Useful_zio_ops'
+title = 'Useful ZIO Ops'
 date = '2025-10-22T01:13:07+01:00'
 draft = false
 tags = ['scala', 'zio']
