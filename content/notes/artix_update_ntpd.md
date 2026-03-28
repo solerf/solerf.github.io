@@ -1,13 +1,13 @@
 +++
-title = 'Artix_update_ntpd'
+title = 'Artix update ntpd'
 date = '2026-03-10T10:35:13+01:00'
 draft = false
-tags = []
+tags = ['artix', 'linux']
 +++
 
 First install:
 ```bash
-# runit as it is the one I use, use other depending on init system
+# runit, or whatever other init system
 pacman -S ntp ntp-runit
 ```
 

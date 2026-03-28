@@ -1,8 +1,8 @@
 +++
-title = 'Linux_recovery_commands'
+title = 'artix recovery commands'
 date = '2026-03-26T22:27:11+01:00'
 draft = true
-tags = []
+tags = ['linux', 'artix']
 +++
 
 

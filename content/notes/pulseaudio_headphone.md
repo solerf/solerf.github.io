@@ -1,5 +1,5 @@
 +++
-title = 'Pulseaudio_headphone'
+title = 'pulseaudio headphone'
 date = '2026-03-22T00:27:42+01:00'
 draft = true
 tags = ['linux', 'pulseaudio']

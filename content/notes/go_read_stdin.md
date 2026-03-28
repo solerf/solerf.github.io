@@ -2,7 +2,7 @@
 title = 'Go check stdin'
 date = '2026-02-25T12:52:45+01:00'
 draft = false 
-tags = []
+tags = ['go']
 +++
 
 When writing terminal programs with `go` a nice way to identify if input data is comming from a piped command:

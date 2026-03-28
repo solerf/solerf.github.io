@@ -2,7 +2,7 @@
 title = 'Tune Go httpclient'
 date = '2026-03-14T23:31:53+01:00'
 draft = true
-tags = []
+tags = ['go']
 +++
 
 Check me
