@@ -1,12 +1,12 @@
 +++
 title = 'pulseaudio headphone'
 date = '2026-03-22T00:27:42+01:00'
-draft = true
+draft = false
 tags = ['linux', 'pulseaudio']
 +++
 
 
-When issues with headphone not working:
+When issues with headphone/audio not working:
 ```
 pulseaudio -k
 ```

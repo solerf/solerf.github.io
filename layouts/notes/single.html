@@ -9,6 +9,10 @@
     {{ $tags = $tags | append (lower .LinkTitle | printf "<%s>") }}
     {{ end }}
     <h4>{{ delimit $tags "" }}</h4>
+    {{ if .Draft }}
+    <h4 style="color:darkred">DRAFT</h4>
+    {{ end }}
+
     <hr>
     {{ .Content }}
 </div>

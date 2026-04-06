@@ -1,5 +1,5 @@
 +++
-title = 'Go build/install arch & os'
+title = 'go build/install arch & os'
 date = '2025-09-22T12:18:00+02:00'
 draft = false
 tags = ['go']

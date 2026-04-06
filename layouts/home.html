@@ -8,6 +8,9 @@
                     <ul>
                         {{ range .Pages }}
                             <li>
+                                {{ if .Draft }}
+                                <span style="color:darkred">DRAFT</span>
+                                {{ end }}
                                 <span><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
                                 <span class="tags">
                                     {{ $tags := slice }}

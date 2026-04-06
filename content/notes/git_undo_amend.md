@@ -1,5 +1,5 @@
 +++
-title = 'Git undo amend'
+title = 'git undo amend'
 date = '2025-10-25T00:39:50+02:00'
 draft = false
 tags = ['git']
