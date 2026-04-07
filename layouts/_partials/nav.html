@@ -3,10 +3,13 @@
         <ul>
             {{ $currentPage := . }}
             {{ range site.Menus.main }}
-            {{ if $currentPage.IsMenuCurrent .Menu . }}
-            <li><a class="active" href="{{ .URL }}">{{ .Name }}</a></li>
-            {{ else }}
-            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ if eq .Name "Notes" }}
+              <!--skip and do not show search-->
+              {{ if $currentPage.IsMenuCurrent .Menu . }}
+              <li><a class="active" href="{{ .URL }}">{{ .Name }}</a></li>
+              {{ else }}
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              {{ end }}
             {{ end }}
             {{ end }}
         </ul>
