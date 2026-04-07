@@ -8,7 +8,6 @@ tags = ['docker', 'linux']
 To add `dockerd` as a service in `runit` and avoid missing `docker.sock` error:
 
 - As root, create the service directory: `mkdir -p /etc/runit/sv/dockerd`.
-
 - Create a run file in previous created directory:
 
 ```bash
@@ -18,7 +17,6 @@ exec dockerd
 ```
 
 - Make it executable `chmod +x /etc/runit/sv/dockerd/run`
-
 - Link the `run` file as usual for `runit`:
 
 ```

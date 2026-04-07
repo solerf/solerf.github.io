@@ -6,10 +6,7 @@ tags = ['linux', 'pulseaudio']
 +++
 
 
-When issues with headphone/audio not working:
-```
-pulseaudio -k
-```
+When issues with headphone/audio not working: `pulseaudio -k`
 
 With more details:
 - https://askubuntu.com/a/147603
