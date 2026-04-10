@@ -138,5 +138,9 @@ section {
             margin: 0.2em 0;
         }
     }
+}
 
+.draft {
+    background: darkred;
+    color: white;
 }

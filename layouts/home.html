@@ -9,7 +9,7 @@
                         {{ range .Pages }}
                             <li>
                                 {{ if .Draft }}
-                                <span style="color:darkred">DRAFT</span>
+                                <span class="draft">DRAFT</span>
                                 {{ end }}
                                 <span><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
                                 <span class="tags">
