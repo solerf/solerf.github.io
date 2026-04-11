@@ -1,3 +1,43 @@
+/* ── Theme tokens ─────────────────────────────────────────── */
+:root {
+    --bg:                  #f8f8f8;
+    --text:                #1a1a1a;
+    --link:                #265dbf;
+    --link-visited:        #644f8e;
+    --navbar-bg:           #282c34;
+    --navbar-link:         #ffffff;
+    --footer-bg:           #f2f2f2;
+    --footer-text:         inherit;
+    --tags-color:          #282c34;
+    --heading-color:       #282c34;
+    --code-bg:             #282c34;
+    --code-text:           #b0c4de;
+    --blockquote-border:   #282c34;
+    --blockquote-bg:       #f1eeee;
+    --blockquote-text:     #333333;
+    --toggle-label:        "☽";
+}
+
+[data-theme="dark"] {
+    --bg:                  #1b1e25;
+    --text:                #cdd5e0;
+    --link:                #7ab3ff;
+    --link-visited:        #b89ee0;
+    --navbar-bg:           #12151b;
+    --navbar-link:         #e0e8f4;
+    --footer-bg:           #12151b;
+    --footer-text:         #8896aa;
+    --tags-color:          #7a8ea8;
+    --heading-color:       #b8c8dc;
+    --code-bg:             #282c34;
+    --code-text:           #b0c4de;
+    --blockquote-border:   #4a6888;
+    --blockquote-bg:       #222630;
+    --blockquote-text:     #b0bece;
+    --toggle-label:        "☀";
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
 body, input, button {
     font-family: system-ui;
 }
@@ -5,34 +45,48 @@ body, input, button {
 body {
     width: 100%;
     margin: 0 auto;
-    background-color: #f8f8f8;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.2s, color 0.2s;
 }
 
 a:-webkit-any-link {
-    color: #265dbf;
+    color: var(--link);
 }
 
 a:visited {
-    color: #644f8e;
+    color: var(--link-visited);
 }
 
 button {
     cursor: pointer;
 }
 
+ul {
+    list-style-type: square;
+}
+
+ul li::marker {
+    color: var(--text);
+}
+
+/* ── Navbar ───────────────────────────────────────────────── */
 .navbar {
     position: sticky;
     top: 0;
 
     nav ul {
         list-style: none;
+        display: flex;
+        align-items: center;
         padding: 1.3rem 1.3rem 1.3rem 0;
         margin: 0;
-        background: #282c34;
+        background: var(--navbar-bg);
         font-size: 1.5rem;
+        transition: background-color 0.2s;
 
         a {
-            color: #fff;
+            color: var(--navbar-link);
             text-decoration: none;
 
             &:hover {
@@ -48,22 +102,47 @@ button {
             display: inline;
             padding: 0 0 0 1.3rem;
         }
+
+        li.theme-toggle-wrap {
+            margin-left: auto;
+        }
     }
 }
 
+/* ── Theme toggle button ──────────────────────────────────── */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--navbar-link);
+    border-radius: 4px;
+    color: var(--navbar-link);
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0.15rem 0.5rem;
+    opacity: 0.75;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+/* ── Main content ─────────────────────────────────────────── */
 main {
     margin: 1.3rem 0 1.3rem 0;
     padding: 0 2rem 0 2rem;
     font-size: 1.2rem;
 }
 
+/* ── Footer ───────────────────────────────────────────────── */
 footer {
-    background: #f2f2f2;
+    background: var(--footer-bg);
+    color: var(--footer-text);
     padding: 2px 2px;
     font-size: .7em;
     text-align: center;
+    transition: background-color 0.2s;
 }
 
+/* ── Note list ────────────────────────────────────────────── */
 section {
     ul li p {
         font-weight: bold;
@@ -72,19 +151,20 @@ section {
 
     ul li .tags {
         font-size: 0.9rem;
-        color: #282c34;
+        color: var(--tags-color);
         font-style: italic;
     }
 }
 
+/* ── Note content ─────────────────────────────────────────── */
 .note-content {
     h1 {
-        color: #282c34;
+        color: var(--heading-color);
         margin-bottom: 0;
     }
 
     h4 {
-        color: #282c34;
+        color: var(--heading-color);
         margin-top: 0;
         margin-bottom: 0;
         font-style: italic;
@@ -111,8 +191,8 @@ section {
 
             code {
                 padding: 0;
-                color: #b0c4de;
-                background-color: #282c34;
+                color: var(--code-text);
+                background-color: var(--code-bg);
             }
         }
     }
@@ -120,18 +200,18 @@ section {
     code {
         font-family: Fira Code, monospace;
         border-radius: 3px;
-        background-color: #282c34;
-        color: #b0c4de;
+        background-color: var(--code-bg);
+        color: var(--code-text);
         padding: .1rem .2rem;
     }
 
     blockquote {
-        border-left: 5px solid #282c34;
+        border-left: 5px solid var(--blockquote-border);
         border-radius: 6px;
         margin: 1em 0;
         padding: 0.5em 1em;
-        background-color: #f1eeee;
-        color: #333;
+        background-color: var(--blockquote-bg);
+        color: var(--blockquote-text);
         font-style: italic;
 
         p {
@@ -140,6 +220,7 @@ section {
     }
 }
 
+/* ── Draft badge ──────────────────────────────────────────── */
 .draft {
     background: darkred;
     color: white;
