@@ -1,8 +1,9 @@
 {{ define "main" }}
+{{ $limit := now.AddDate 0 -5 0 }}
 <section>
     <ul>
         {{ range where .Pages "Section" "notes" }}
-            {{ range first .Site.Params.maxNotes (.Pages.GroupByPublishDate "2006-01-02") }}
+            {{ range first .Site.Params.maxNotes ((where .Pages "Date" ">=" $limit).GroupByPublishDate "2006-01-02") }}
                 <li>
                     <p>{{ .Key }}</p>
                     <ul>

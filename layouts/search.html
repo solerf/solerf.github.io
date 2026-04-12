@@ -1,29 +1,24 @@
 {{ define "main" }}
-<!-- <div>
-    <input id="tagName" type="text" placeholder="tag name"/>
-    <button>Search</button>
-</div> -->
+<div class="search-bar">
+    <input id="search-input" type="text" placeholder="filter by tag..." autocomplete="off" spellcheck="false"/>
+</div>
 
-<section>
-    <ul>
-        {{ range $term, $taxonomy := .Site.Taxonomies.tags }}
-        <li id="{{ $term }}">
-            <p>{{ $term }}</p>
-        </li>
+<section id="search-results">
+    {{ range $term, $taxonomy := .Site.Taxonomies.tags }}
+    <div class="tag-group" data-tag="{{ $term }}">
+        <p>{{ $term }}</p>
         <ul>
-            {{ range $taxonomy.Pages }}
-            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+            {{ range $taxonomy.Pages.ByDate.Reverse }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <span class="entry-date">{{ .Date.Format "2006-01-02" }}</span>
+            </li>
             {{ end }}
         </ul>
-        {{ end }}
-    </ul>
+    </div>
+    {{ end }}
+    <p id="no-results" style="display:none">No results</p>
 </section>
-
-<script>
-    document.querySelector('button').addEventListener('click', e => {
-        let tn = document.querySelector("#tagName").value;
-        console.log(document.querySelectorAll(`li#${tn}`))
-    });
-</script>
-
+{{ $js := resources.Get "js/search.js" | resources.Minify }}
+<script src="{{ $js.Permalink }}" defer></script>
 {{ end }}

@@ -3,14 +3,12 @@
         <ul>
             {{ $currentPage := . }}
             {{ range site.Menus.main }}
-            {{ if eq .Name "Notes" }}
-              <!--skip and do not show search-->
-              {{ if or ($currentPage.IsMenuCurrent .Menu .) (eq $currentPage.Section "notes") }}
+              {{ $isActive := $currentPage.IsMenuCurrent .Menu . }}
+              {{ if $isActive }}
               <li><a class="active" href="{{ .URL }}">{{ .Name }}</a></li>
               {{ else }}
               <li><a href="{{ .URL }}">{{ .Name }}</a></li>
               {{ end }}
-            {{ end }}
             {{ end }}
             <li class="theme-toggle-wrap">
                 <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle dark mode">☽</button>
