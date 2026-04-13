@@ -5,8 +5,18 @@
     <title>{{ .Page.Title }} | {{ .Site.Title }}</title>
 
     <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+
     {{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+    <script>
+        /*set the script to run as inline to avoid theme flickering*/
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+    {{ $js := resources.Get "js/main.js" | resources.Minify }}
+    <script src="{{ $js.Permalink }}" defer></script>
 </head>
 <body>
 {{ partial "nav.html" . }}
@@ -15,7 +25,5 @@
     {{ end }}
 </main>
 {{ partial "footer.html" . }}
-{{ $js := resources.Get "js/main.js" | resources.Minify }}
-<script src="{{ $js.Permalink }}" defer></script>
 </body>
 </html>
