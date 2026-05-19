@@ -22,7 +22,7 @@ Just set up a dns config for the docker daemon (I think those are google's dns):
 ```
 
 at one of those two:
-- `$HOME/.docker/daemon.json`
+- `$HOME/.docker/daemon.json` (this path does not work for linux)
 - `/etc/docker/daemon.json`
 
 > Do not forget to restart the service
