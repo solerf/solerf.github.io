@@ -20,5 +20,5 @@ exec dockerd
 - Link the `run` file as usual for `runit`:
 
 ```
-ln -s /etc/runit/sv/docker /run/runit/service
+ln -s /etc/runit/sv/dockerd /run/runit/service
 ```

@@ -1,5 +1,4 @@
 baseURL = 'https://solerf.github.io/'
-languageCode = 'en-us'
 title = 'Recordings'
 summaryLength = 20
 
