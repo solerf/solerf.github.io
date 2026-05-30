@@ -15,8 +15,10 @@ tags = ['linux', 'mullvad']
 #!/bin/sh
 exec 2>&1
 sv check dbus > /dev/null || exit 1
-exec /opt/Mullvad\ VPN/resources/mullvad-daemon -v --disable-stdout-timestamps
-# exec /usr/bin/mullvad-daemon -v --disable-stdout-timestamps
+# exec /opt/Mullvad\ VPN/resources/mullvad-daemon -v --disable-stdout-timestamps
+
+# this is the correct exec
+exec /usr/bin/mullvad-daemon -v --disable-stdout-timestamps
 ```
 
 This script runs the daemon, redirects logs, and ensures D-Bus is running.
