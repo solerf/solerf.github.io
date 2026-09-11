@@ -1,7 +1,7 @@
 +++
-title = 'Artix_extra_repos'
+title = 'Artix extra repos'
 date = '2026-05-26T00:30:15+02:00'
-draft = true
+draft = false
 tags = []
 +++
 
