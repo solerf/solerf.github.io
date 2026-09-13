@@ -1,7 +1,7 @@
 +++
-title = 'Thunar no recent'
+title = 'Thunar remove places'
 date = '2026-09-11T18:42:17+02:00'
-draft = true
+draft = false 
 tags = ['linux', 'thunar']
 +++
 
